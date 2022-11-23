@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Eric.</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+    <div class="header-container">
+        <div class="container-inside">
+        <p class="header-logo"><a href="#inicio">ERIC.</a></p>
+        <ul class="header-list">
+            <li><a href="#inicio">INÍCIO</a></li>
+            <li><a href="#sobre-container">SOBRE MIM</a></li>
+            <li><a href="#tp">HABILIDADES</a></li>
+            <li><a href="#contato-container2">CONTATO</a></li>
+        </ul>
+        </div>
+    </div>
+
+    <div id="inicio"></div>
+    <div class="inicio-container">
+        <div class="list-container">
+            <ul>
+                <li id="li1">
+                    Olá, me chamo
+                </li>
+                <li id="li2">
+                    Eric Lima
+                </li>
+                <li id="li3">
+                    <p id="subtitle">desenvolvedor FullStack</p>
+                    <p>&nbsp;</p>
+                    <p>Experiente em<br>
+                    web design e programação<br>
+                    trabalhando sempre com<br>
+                    qualidade
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="sobre-container">
+        <div class="sobre-container2">
+            <span class="sobre-title">SOBRE MIM</span>
+            <span class="sobre-text reveal">Sou um desenvolvedor entusiasta que valoriza os detalhes e se diverte dando vida à ideias e projetos. Possuo enorme paixão por efeitos UI e sempre priorizo a expêriencia do usuário.</span>
+            <div id="tp"></div>
+        </div>
+    </div>
+
+    <div id="habilidades-container">
+    <div class="habilidades-container2">
+        <div class="habilidades-title">HABILIDADES</div>
+        <div class="half-container">
+        <div class="habilidades-half">
+            <ul class="habilidades-list1">
+                <li>
+                    <div class="img-container">
+                        <img src="imagens/cmdline.png">
+                    </div>
+                </li>
+                <li class="habilidades-subtitle">LINGUAGENS</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>C#</li>
+                <li>SQL</li>
+                <li>Git</li>
+                <li id="inv">&nbsp;</li>
+            </ul>
+        </div>
+        <div class="habilidades-half2">
+            <ul class="habilidades-list2">
+                <li>
+                    <div class="img-container2">
+                        <img src="imagens/tool.png">
+                    </div>
+                </li>
+                <li class="habilidades-subtitle">FERRAMENTAS</li>
+                <li>Visual Studio</li>
+                <li>VS Code</li>
+                <li>MySQL</li>
+                <li>Office</li>
+                <li>G Suite</li>
+                <li>Github</li>
+                <li>MySQL</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="contato-container2">
+        <p id="contato-title">CONTATO</p>
+        <p id="contato-subtitle">Quer trabalhar junto ou tem alguma pergunta?</p>
+
+        <form class="form" method="POST" action="index.html">
+            <div class="row">
+              <input type="text" class="input" name="nome" placeholder="Nome" required>
+            </div>
+            <div class="row">
+              <input type="text" class="input" name="email" placeholder="Email" required>
+            </div>
+            <div class="row">
+              <textarea name="mensagem" class="textarea" placeholder="Sua mensagem..."id="" cols="30" rows="10" required></textarea>
+            </div>
+            <div class="button">
+              <input type="submit" class="btn" name="enviar" value="Enviar">
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+
+        function reveal(){
+        var reveals = document.querySelectorAll('.reveal');
+
+        for(var i = 0; i < reveals.length; i++){
+
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+            var revealpoint = 150;
+
+            if(revealtop < windowheight - revealpoint){
+                reveals[i].classList.add('active');
+            }
+            else{
+                reveals[i].classList.remove('active');
+            }
+            }
+        }
+        ScrollReveal({
+        //reset: true,
+        distance: '60px',
+        duration: 2500,
+        delay: 400
+      });
+      ScrollReveal().reveal('#li2', { delay: 4000, origin: 'left' });
+    </script>
+    <script type="text/javascript">
+        function typeWriter(elemento) {
+          const textoArray = elemento.innerHTML.split('');
+          elemento.innerHTML = '';
+          for(let i = 0; i < textoArray.length; i++) {
+            setTimeout(() => elemento.innerHTML += textoArray[i], 110 * i);
+            }
+        }
+        const titulo = document.querySelector('#li1');
+        typeWriter(titulo);
+
+        window.addEventListener('scroll', reveal);
+
+    </script>
+
+</body>
+</html>
